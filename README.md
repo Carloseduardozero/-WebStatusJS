@@ -12,8 +12,25 @@
 
 **Autores**
 | 
-Nome                      | GitHub                                   | Likedin                                                 | E-mail                    |
-| -------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ---------------------------------------- | ------------------------------------------------------- | ------------------------- |
+Nome: Ubirani Dantas;
+      Alberto Filho;
+      Carlos Eduardo;
+      Filipe Silva;
+      Gabriel Ferreira;
+      Lucas Alves;
+      Rebeca Lima de Jesus;
+      
+GitHub: Albertoramosss;
+        Carloseduardozero;
+        filipesenai123;
+        Lucas1Alves98;
+        
+E-mail: ubiradesigner@gmail.com;
+        albertinhoor@gmail.com;
+        carloseduardozero0@gmail.com;
+        filipe10lm57@gmail.com;
+        gabrielfst30@gmail.com;
+        lucas1alves98@gmail.com;
 | 
 
 
