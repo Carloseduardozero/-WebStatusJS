@@ -4,7 +4,10 @@
 
 **Objetivo**
 
-
+Desenvolver um website para a divulgação da autoescola Status, colocando conteúdos
+sobre o DETRAN e as notícias que acontecem dentro do Centro de Formação de
+Condutores, disponibilizar um portal do aluno para gerenciamento dos alunos,
+esclarecimento de dúvidas e acompanhamento do seu desempenho.
 
 **Justificativa**
 
