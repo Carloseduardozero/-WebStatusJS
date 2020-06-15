@@ -23,7 +23,8 @@ Nome: Ubirani Dantas;
       Lucas Alves;
       Rebeca Lima de Jesus;
       
-GitHub: Albertoramosss;
+GitHub: UbiraD; 
+        Albertoramosss;
         Carloseduardozero;
         filipesenai123;
         Lucas1Alves98;
