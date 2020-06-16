@@ -27,6 +27,7 @@ GitHub: UbiraD;
         Albertoramosss;
         Carloseduardozero;
         filipesenai123;
+        warlicnix;
         Lucas1Alves98;
         
 E-mail: ubiradesigner@gmail.com;
