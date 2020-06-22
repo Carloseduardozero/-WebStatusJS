@@ -10,7 +10,7 @@ app.set ('view engine','handlebars');
 
 
 
-app.get("/",function(req,res){
+app.get("/index",function(req,res){
 res.render('index');
 });
 
@@ -44,7 +44,7 @@ app.get("/adicao",function(req,res){
                             res.render('empresa');
                             });
 
-                            app.get("/portal-aluno.",function(req,res){
+                            app.get("/portal-aluno",function(req,res){
                                 res.render('portal-aluno');
                                 });
 
