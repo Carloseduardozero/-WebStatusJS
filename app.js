@@ -7,10 +7,17 @@ const app=express();
 //template engine
 app.engine("handlebars",handlebars({defaultLayout:'main'}));
 app.set ('view engine','handlebars');
+app.use('/views/assets/css',express.static('main'));
+app.use('/views/assets/css',express.static('bootstrap-theme'));
+app.use('/views/assets/css',express.static('bootstrap.min'));
+app.use('/views/assets/css',express.static('font-awesome.min'));
+app.use('/views/assets/images',express.static('logo'));
+
+
 
 
 //Renderizando as pastas handlebars
-app.get("/index",function(req,res){
+app.get("/",function(req,res){
 res.render('index');
 });
 
@@ -45,62 +52,92 @@ app.get("/adicao",function(req,res){
                             app.get("/portal-aluno",function(req,res){
                                 res.render('portal-aluno');
                                 });
-//Disponibilizando imagens para serem renderizadas no handlebars
 
-    app.get("1",function(req,res){
+
+
+                                //Disponibilizando imagens para serem renderizadas no handlebars
+
+    app.get("/1",function(req,res){
         res.sendFile(__dirname+'/views/assets/images/1.jpg');
         });
        
-        app.get("2",function(req,res){
+        app.get("/2",function(req,res){
             res.sendFile(__dirname+'/views/assets/images/2.jpg');
             });
-            app.get("logo",function(req,res){
-                res.sendFile(__dirname+'/views/assets/images/logo.png');
+            app.get("/logo",function(req,res){
+                res.render(__dirname+'/src/views/assets/images/logo.png');
                 });
-                app.get("moto",function(req,res){
+                app.get("/moto",function(req,res){
                     res.sendFile(__dirname+'/views/assets/images/moto.jpg');
                     });
-                    app.get("bg_header",function(req,res){
+                    app.get("/bg_header",function(req,res){
                         res.sendFile(__dirname+'/views/assets/images/bg_header.jpg');
                         });
-                        app.get("bomfim",function(req,res){
+                        app.get("/bomfim",function(req,res){
                             res.sendFile(__dirname+'/views/assets/images/bomfim.jpg');
                             });
-                            app.get("gt_favicon",function(req,res){
+                            app.get("/gt_favicon",function(req,res){
                                 res.sendFile(__dirname+'/views/assets/images/gt_favicon.png');
                                 });
-                                app.get("mac",function(req,res){
+                                app.get("/mac",function(req,res){
                                     res.sendFile(__dirname+'/views/assets/images/mac.jpg');
                                     });
-                                    app.get("pista-moto",function(req,res){
+                                    app.get("/pista-moto",function(req,res){
                                         res.sendFile(__dirname+'/views/assets/images/pista-moto.jpg');
                                         });
                                         app.get("sinalito",function(req,res){
                                             res.sendFile(__dirname+'/views/assets/images/sinalito.jpg');
                                             });
-                                            app.get("sinalito-m",function(req,res){
+                                            app.get("/sinalito-m",function(req,res){
                                                 res.sendFile(__dirname+'/views/assets/images/sinalito-m.png');
                                                 });
-                                                app.get("teste",function(req,res){
+                                                app.get("/teste",function(req,res){
                                                     res.sendFile(__dirname+'/views/assets/images/teste.jpg');
                                                     });
-// Disponibilizando os arquivos de estilo css para serem utilizados nos handlebars
-app.get("adm",function(req,res){
-    res.sendFile(__dirname+'/views/assets/css/adm.css');
+
+
+    // Disponibilizando os arquivos de estilo css para serem utilizados nos handlebars
+app.get("/bootstrap-theme",function(req,res){
+    res.sendFile(__dirname+'/views/assets/css/bootstrap-theme.css');
     });
-    app.get("bootstrap-theme",function(req,res){
-        res.sendFile(__dirname+'/views/assets/css/bootstrap-theme.css');
+
+    app.get("/bootstrap.min",function(req,res){
+        res.sendFile(__dirname+'/views/assets/css/bootstrap.min.css');
         });
-        app.get("bootstrap.min",function(req,res){
-            res.sendFile(__dirname+'/views/assets/css/bootstrap.min.css');
+    
+        app.get("/main",function(req,res){
+            res.sendFile(__dirname+'/views/assets/css/main.css');
             });
-            app.get("font-awesome.min",function(req,res){
+        
+            app.get("/font-awesome.min",function(req,res){
                 res.sendFile(__dirname+'/views/assets/css/font-awesome.min.css');
                 });
-                app.get("main",function(req,res){
-                    res.sendFile(__dirname+'/views/assets/css/main.css');
+            
+
+
+        //Disponibilizando os arquivos de js para serem utilizados nos handlebars
+        app.get("/google-maps",function(req,res){
+            res.sendFile(__dirname+'/views/assets/css/google-maps.js');
+            });
+            app.get("/headroom.min",function(req,res){
+                res.sendFile(__dirname+'/views/assets/css/headroom.min.js');
+                });
+                app.get("/html5shiv",function(req,res){
+                    res.sendFile(__dirname+'/views/assets/css/html5shiv.js');
                     });
-// Start Server
+                    app.get("/jQuery.headroom.min",function(req,res){
+                        res.sendFile(__dirname+'/views/assets/css/jQuery.headroom.min.js');
+                        });
+                        app.get("/respond.min",function(req,res){
+                            res.sendFile(__dirname+'/views/assets/css/respond.min.js');
+                            });
+                            app.get("/template",function(req,res){
+                                res.sendFile(__dirname+'/views/assets/css/template.js');
+                                });
+        
+
+
+                // Start Server
 app.listen(3001,function(req,res){
     console.log('Servidor está rodando!');
   
