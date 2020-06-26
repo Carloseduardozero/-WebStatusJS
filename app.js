@@ -7,11 +7,7 @@ const app=express();
 //template engine
 app.engine("handlebars",handlebars({defaultLayout:'main'}));
 app.set ('view engine','handlebars');
-app.use('/views/assets/css',express.static('main'));
-app.use('/views/assets/css',express.static('bootstrap-theme'));
-app.use('/views/assets/css',express.static('bootstrap.min'));
-app.use('/views/assets/css',express.static('font-awesome.min'));
-app.use('/views/assets/images',express.static('logo'));
+app.use(express.static('public'));
 
 
 
@@ -55,7 +51,7 @@ app.get("/adicao",function(req,res){
 
 
 
-                                //Disponibilizando imagens para serem renderizadas no handlebars
+ //Disponibilizando imagens para serem renderizadas no handlebars
 
     app.get("/1",function(req,res){
         res.sendFile(__dirname+'/views/assets/images/1.jpg');
@@ -95,8 +91,9 @@ app.get("/adicao",function(req,res){
                                                     res.sendFile(__dirname+'/views/assets/images/teste.jpg');
                                                     });
 
+// Disponibilizando os arquivos de estilo css para serem utilizados nos handlebars
 
-    // Disponibilizando os arquivos de estilo css para serem utilizados nos handlebars
+
 app.get("/bootstrap-theme",function(req,res){
     res.sendFile(__dirname+'/views/assets/css/bootstrap-theme.css');
     });
@@ -114,9 +111,11 @@ app.get("/bootstrap-theme",function(req,res){
                 });
             
 
-
-        //Disponibilizando os arquivos de js para serem utilizados nos handlebars
-        app.get("/google-maps",function(req,res){
+ //Disponibilizando os arquivos de js para serem utilizados nos handlebars
+        
+ 
+ 
+ app.get("/google-maps",function(req,res){
             res.sendFile(__dirname+'/views/assets/css/google-maps.js');
             });
             app.get("/headroom.min",function(req,res){
