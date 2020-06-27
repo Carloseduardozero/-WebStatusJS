@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <body>
     <link rel="shortcut icon" href="./images/gt_favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="./css/Padm.css">
+    <link rel="stylesheet" type="text/css" href="./css/P/.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="./js/jquery.mask.min.js"></script>
-   <!--- Identificar os digitos -->
-   <script type="text/javascript">
-        $(document).ready(function(){
-            $("#cpf").mask("000.000.000-00")
-           
-
-        })
-    </script>
-    <title>Area do administrador</title>
+    <title>Area do /inistrador</title>
 </head>
 <header>
     <div class="header-area">
         <div class="logo">
             <a href="#">
-                <img src="./images/logoadm.png" alt="">
+                <img src="./images/logo/.png" alt="">
             </a>
         </div>
 </header>
@@ -32,25 +23,25 @@
     <div class="container">
         <nav>
             <ul class="menu">
-                <a href="adm.html">
+                <a href="/adm">
                     <li><i class="fa fa-user"></i> Novo Cadastro</li>
                 </a>
-                <a href="buscar.html">
+                <a href="/buscar">
                     <li><i class="fa fa-search"></i> Buscar</li>
                 </a>
-                <a href="deletar.html">
+                <a href="/deletar">
                     <li><i class="fa fa-trash"></i> Deletar</li>
                 </a>
-                <a href="solicitacoes.html">
+                <a href="/solicitacoes">
                     <li><i class="fa fa-bell"></i> Solicitações</li>
                 </a>
-                <a href="inseriraulas.html">
+                <a href="/inseriraulas">
                     <li><i class="fa fa-folder"></i> Inserir Aulas</li>
                 </a>
-                <a href="historicoaluno.html">
+                <a href="/historicoaluno">
                     <li><i class="fa fa-history"></i> Histórico de Aluno</li>
                 </a>
-                <a href="AdmLogin.php">
+                <a href="/Login">
                     <li><i class="fa fa-sign-out"></i> Encerrar</li>
                 </a>
             </ul>
@@ -58,7 +49,7 @@
         <section>
             <!-- final do menu -->
             <div class="mininav">
-                <h1>Deletar Alunos</h1>
+                <h1>Encerrar Sessão</h1>
             </div>
             <br>
             <!-- formulário de Cadastro de Aluno -->
@@ -66,14 +57,11 @@
                 <form method="post" action="../Controller/cadastro.php">
 
                    
-                    <label>CPF do Aluno</label> <br>
-                    <input type="text" name="cpf" class="campo" id="cpf" maxlenght="14">
-                    <br>
-    
+              
 
 
-                    <input type="submit" value="Deletar" class="btn">
-                    <input type="reset" value="Limpar" class="btn">
+                    <input type="submit" value="Sair" class="btn">
+                   
                     <br>
                     <br>
                 </form>
@@ -87,7 +75,7 @@
 
 
 
-</html>
+<>
     
 
 
@@ -95,4 +83,4 @@
 
 
 </body>
-</html>
+<>

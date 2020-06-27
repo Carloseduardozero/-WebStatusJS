@@ -7,14 +7,19 @@ const app=express();
 //template engine
 app.engine("handlebars",handlebars({defaultLayout:'main'}));
 app.set ('view engine','handlebars');
-app.use(express.static('public'));
+app.use('/public',express.static('public'));
+app.use('/css',express.static('css'));
+app.use('/adm/css',express.static('css'));
+app.use('/adm/images',express.static('images'));
 
 
 
 
-//Renderizando as pastas handlebars
-app.get("/",function(req,res){
-res.render('index');
+
+
+//Renderizando os arquivos handlebars
+app.get("/",function(req,res,results){
+res.render('index',{imagens:results});
 });
 
 app.get("/adicao",function(req,res){
@@ -48,6 +53,41 @@ app.get("/adicao",function(req,res){
                             app.get("/portal-aluno",function(req,res){
                                 res.render('portal-aluno');
                                 });
+                            
+    
+
+
+// Renderizando os arquivos handlebars da pasta adm
+                                app.get("/adm/adm",function(req,res){
+                                    res.render('adm/adm');
+                                    });
+
+                                    app.get("/adm/buscar",function(req,res){
+                                        res.render('adm/buscar');
+                                        });
+
+                                        app.get("/adm/deletar",function(req,res){
+                                            res.render('adm/deletar');
+                                            });
+
+                                            app.get("/adm/encerrar",function(req,res){
+                                                res.render('adm/encerrar');
+                                                });
+
+                                                app.get("/adm/historicoaluno",function(req,res){
+                                                    res.render('adm/historicoaluno');
+                                                    });
+
+                                                    app.get("/adm/inseriraulas",function(req,res){
+                                                        res.render('adm/inseriraulas');
+                                                        });
+
+                                                        app.get("/adm/solicitacoes",function(req,res){
+                                                            res.render('adm/solicitacoes');
+                                                            });
+                            
+
+                                
 
 
 
