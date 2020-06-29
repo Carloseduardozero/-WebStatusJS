@@ -71,8 +71,9 @@
             <br>
            
             <!-- formulário de Cadastro de Aluno -->
+
             <div class="text-f">
-                <form method="post" action="../Controller/cadastro.php">
+                <form name='form1' method="post" action="">
 
                     <label> Nome Completo</label><br>
                     <input type="text" name="nome" class="campo" maxlenght="40" required autofocus><br>
@@ -80,9 +81,10 @@
                     <label>CPF</label> <br>
                     <input type="text" name="cpf" class="campo" id="cpf" maxlenght="14">
                     <br>
-                    
+                   
+                      
                     <label>Data de Nascimento</label><br>
-                    <input type="text" name="dataNascimento" id="dataNascimento"class="campo" maxlenght="40" required><br>
+                    <input type="text" name="nascimento" id="dataNascimento"class="campo" maxlenght="40" required><br>
                     <br>
                     Sexo:
                     <select name="sexo">
@@ -110,17 +112,18 @@
                     <input type="email" name="email" class="campo" maxlenght="40" required autofocus><br>
                    
                     <label>Senha</label><br>
-                    <input type="text" name="celular" class="campo" id="celular" />
+                    <input type="text" name="senha" class="campo" id="celular" />
                     <br>
+                    
                     <label>Confirmar Senha</label><br>
-                    <input type="text" name="celular" class="campo" id="celular" />
+                    <input type="text" name="senhaComfirme" class="campo" id="celular" />
                     <br>
                     Ocorrência<br>
                     <textarea rows="10" cols="55" maxlength="500" name="comentarios" id="comentarios" style="resize: none">
                      Comente aqui...
                 
                   </textarea><br /><br>
-
+                    
                    
                     <input type="submit" class="btn btn-primary" value="Salvar" class="btn">
                     <input type="reset" class="btn btn-outline-success" value="Limpar" class="btn">

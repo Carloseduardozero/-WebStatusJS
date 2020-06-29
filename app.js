@@ -4,6 +4,22 @@ const mysql=require('mysql');
 const handlebars=require('express-handlebars');
 const app=express();
 
+
+//conexao com o banco 
+const urlencodeParser=bodyParse.urlencoded({extended:false});
+const sql=mysql.createConnection({
+   host:'localhost',
+   user:'root',
+   password:'',
+   port:3306
+});
+sql.query("use webstatus");
+
+
+
+
+
+
 //template engine
 app.engine("handlebars",handlebars({defaultLayout:'main'}));
 app.set ('view engine','handlebars');
@@ -58,9 +74,13 @@ app.get("/adicao",function(req,res){
 
 
 // Renderizando os arquivos handlebars da pasta adm
-                                app.get("/adm/adm",function(req,res){
-                                    res.render('adm/adm');
-                                    });
+app.get("/adm/adm",function(req,res){res.render('adm/adm'); });
+app.post("/adm/adm",urlencodeParser,function(req,res){
+    sql.query("insert into adm (nome,cpf,nascimento,sexo,endereco,cep,telefone,celular,email,senha,comentarios) values (?,?,?,?,?,?,?,?,?,?,?)",[req.body.nome,req.body.cpf,req.body.nascimento,req.body.sexo,req.body.endereco,req.body.cep,req.body.telefone,req.body.celular,req.body.email,req.body.senha,req.body.comentarios]);
+    res.render('adm/adm');
+}); 
+
+
 
                                     app.get("/adm/buscar",function(req,res){
                                         res.render('adm/buscar');
