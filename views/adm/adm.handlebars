@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE>
+ 
 <head> 
 <meta charset="UTF-8">
-   
-    <link rel="shortcut icon" href="/public/gt_favicon.png">
+
+    <link rel="shortcut icon" href="/adm/images/gt_favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="./css/Padm.css">
+    <link rel="stylesheet" type="text/css" href="/adm/css/Padm.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
@@ -29,8 +29,8 @@
 <header>
     <div class="header-area">
         <div class="logo">
-            <a href="#">
-                <img src="./images/logoadm.png" alt="">
+            <a href="/">
+                <img src="/adm/images/logoadm.png" alt="">
             </a>
         </div>
 </header>
@@ -46,19 +46,15 @@
                 <a href="/adm/buscar">
                     <li><i class="fa fa-search"></i> Buscar</li>
                 </a>
-                <a href="/adm/deletar">
-                    <li><i class="fa fa-trash"></i> Deletar</li>
-                </a>
+            
                 <a href="/adm/solicitacoes">
                     <li><i class="fa fa-bell"></i> Solicitações</li>
                 </a>
                 <a href="/adm/inseriraulas">
                     <li><i class="fa fa-folder"></i> Inserir Aulas</li>
                 </a>
-                <a href="/adm/históricoaluno">
-                    <li><i class="fa fa-history"></i> Histórico de Aluno</li>
-                </a>
-                <a href="/views/adm">
+
+                <a href="/portal-aluno">
                     <li><i class="fa fa-sign-out"></i> Encerrar</li>
                 </a>
             </ul>
@@ -71,11 +67,9 @@
             <br>
            
             <!-- formulário de Cadastro de Aluno -->
-
             <div class="text-f">
-                <form name='form1' method="post" action="">
-
-                    <label> Nome Completo</label><br>
+                <form method="post" action="">
+                 <label> Nome Completo</label><br>
                     <input type="text" name="nome" class="campo" maxlenght="40" required autofocus><br>
 
                     <label>CPF</label> <br>
@@ -129,6 +123,7 @@
                     <input type="reset" class="btn btn-outline-success" value="Limpar" class="btn">
                     <br>
                     <br>
+                   
                 </form>
             </div>
             <!-- final do castrado do aluno -->

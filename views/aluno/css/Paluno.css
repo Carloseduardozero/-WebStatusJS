@@ -1,0 +1,132 @@
+   /* ----------------------------------------------------------------------- */
+   * {
+    margin:0;
+    padding:0;
+  }
+
+  /* ----------------------------------------------------------------------- */
+  a{
+      text-decoration: none;
+      color:white;
+  }
+
+  /* ----------------------------------------------------------------------- */
+  h1{
+    color: #fff;
+    margin-left: 35%;  
+  }
+
+     /* ----------------------------------------------------------------------- */ 
+     body{
+     background-color: #E6E6E6;
+     margin-left:-10%; 
+     font-family: Verdana;  
+     font-size: 100%;
+      }
+      /* ----------------------------------------------------------------------- */
+      .header-area{
+        background-color: #00A551;
+       }
+
+     /* ----------------------------------------------------------------------- */  
+    .logo{
+      margin-left: 20%;
+    }
+
+    /* ----------------------------------------------------------------------- */
+      .container {
+      
+      margin:auto;
+      width:1200px;
+      margin-top: 0px;
+      padding: 10px;
+      }
+      
+      /* ----------------------------------------------------------------------- */
+      nav{
+      
+          width: 300px;
+          height: 1010px;
+          background-color: #cccc;
+          float: left;
+          box-sizing:border-box;
+          padding:10px;
+          border-radius: 0px 0px 0px 0px;
+      }
+     
+    /* ----------------------------------------------------------------------- */
+    .mininav{
+        height: 50px;
+        background-color: #00A551;
+        border-radius: 0px 0px 0px 0px;
+        padding: 0%;
+      }
+    
+    /* ----------------------------------------------------------------------- */
+      
+      .text-f{
+        margin-left: 3%;
+       
+      }
+      /* ----------------------------------------------------------------------- */
+      section{
+         width:890px;
+         height: 1010px;
+         margin-left: 10px;
+         float:left;
+         background-color: #ffff;
+         box-sizing:border-box;
+         padding: 0px;
+         border-radius: 15px 15px 0px 0px;
+         }
+
+      /* ----------------------------------------------------------------------- */
+      ul.menu{
+       list-style-type: none;
+      }
+
+      /* ----------------------------------------------------------------------- */
+      ul.menu li{
+       width:250px;
+       height:50px;
+       line-height:30px;
+       background-color: #00A551;
+       color: #fff;
+       margin-top:5px;
+       box-sizing:border-box;
+       padding-left:10px;
+       border-radius: 0px 0px 0px 0px;
+         }
+      /* ----------------------------botão-------------------------------------------- */
+
+
+
+      .btn{
+        width: 100px;
+        height: 35px;
+        border: 1px solid #ddd;
+        background-color: #006633;
+        color: #fff;
+        cursor: pointer;
+       }
+      
+      /* ------------------------------compo pra input--------------------------------------*/
+      .campo{
+        width: 400px;
+        height: 30px;
+        border: 1px solid #ccc;
+        margin-top: 3px;
+        margin-bottom: 10px;
+      }
+      /* ----------------------------------------------------------------------- */
+      .footer {
+        background-color: blueviolet;
+        position:absolute;
+        bottom:0;
+        width:150%;
+      }
+      
+      @media (max-width:700px){
+
+        
+      }
