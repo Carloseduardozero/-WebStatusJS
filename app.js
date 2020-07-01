@@ -64,10 +64,14 @@ app.get("/",function(req,res){
                                 res.render('empresa');
                                 });
     
-                                app.get("/portal-aluno",function(req,res){
-                                    res.render('portal-aluno');
-                                    });
-                                
+                                app.get("/portal-aluno/:id?",function(req,res){
+                                    if(!req.params.id){
+                                        sql.query("select * from webstatus", function(err,results,fields){
+                                    res.render('portal-aluno',{data:results});
+                                        });
+                                    }
+                                      
+                                });
 
 // Renderizando os arquivos handlebars da pasta admin
 app.get("/adm/adm",function(req,res){res.render('adm/adm'); });
@@ -76,12 +80,32 @@ app.post("/adm/adm",urlencodeParser,function(req,res){
     res.render('adm/adm');
 }); 
 
-    app.get("/adm/buscar",function(req,res){
-        res.render('adm/buscar');
+     app.get("/adm/buscar:id?",function(req,res){
+            if(!req.params.id){
+                sql.query("select * from adm order by id asc", function(err,results,fields){
+            res.render('adm/buscar',{data:results});
+                });
+            }else{
+                sql.query("select * from adm where id=? order by id asc",[req.params.id], function(err,results,fields){
+                    res.render('adm/buscar',{data:results});
+            });
+        } 
         });
 
         app.get("/adm/deletar",function(req,res){
             res.render('adm/deletar');
+            });
+            app.get("/adm/buscado/:id?",function(req,res){
+                if(!req.params.id){
+                    sql.query("select * from adm order by id asc", function(err,results,fields){
+                res.render('adm/buscado',{data:results});
+                    });
+                }else{
+                    sql.query("select * from adm where id=? order by id asc",[req.params.id], function(err,results,fields){
+                        res.render('adm/buscado',{data:results});
+                        console.log(req.params.id)
+                });
+            } 
             });
 
             app.get("/adm/encerrar",function(req,res){
