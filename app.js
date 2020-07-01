@@ -80,17 +80,27 @@ app.post("/adm/adm",urlencodeParser,function(req,res){
     res.render('adm/adm');
 }); 
 
-     app.get("/adm/buscar:id?",function(req,res){
-            if(!req.params.id){
-                sql.query("select * from adm order by id asc", function(err,results,fields){
+     app.get("/adm/buscar",function(req,res){res.render('adm/buscar')});
+    app.post("/adm/buscar",urlencodeParser,function(req,res){
+
+        sql.query("select* from adm where cpf=?",[req.body.pesquisa],function(err,results,fields){
             res.render('adm/buscar',{data:results});
-                });
-            }else{
-                sql.query("select * from adm where id=? order by id asc",[req.params.id], function(err,results,fields){
-                    res.render('adm/buscar',{data:results});
-            });
-        } 
+           
         });
+    });
+   
+   
+    app.get("/adm/buscar:id?",function(req,res){
+        if(!req.params.id){
+            sql.query("select * from adm order by cpf asc", function(err,results,fields){
+        res.render('adm/buscar',{data:results});
+            });
+        }else{
+            sql.query("select * from adm where id=? order by id asc",[req.params.id], function(err,results,fields){
+                res.render('adm/buscar',{data:results});
+        });
+    } 
+    });
 
         app.get("/adm/deletar",function(req,res){
             res.render('adm/deletar');
@@ -103,7 +113,7 @@ app.post("/adm/adm",urlencodeParser,function(req,res){
                 }else{
                     sql.query("select * from adm where id=? order by id asc",[req.params.id], function(err,results,fields){
                         res.render('adm/buscado',{data:results});
-                        console.log(req.params.id)
+                        
                 });
             } 
             });

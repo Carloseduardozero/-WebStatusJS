@@ -59,11 +59,12 @@
             <br>
             <!-- formulário de Cadastro de Aluno -->
             <div class="text-f">
-                <a href="/adm/buscado"></a>
+                
 
-                   
+                   <form method="POST" action="">
                     <label>CPF do Aluno</label> <br>
-                    <input type="text" name="cpf" class="campo" id="cpf" maxlenght="14">
+                    <input type="text" name="pesquisa" class="campo" id="cpf" maxlenght="14">
+                    </form>
                     <br>
     
 
@@ -75,6 +76,43 @@
                 </form>
             </div>
             <!-- final do castrado do aluno -->
+
+            <table>
+  <tr>
+        <td>id</td>
+        <td>nome</td>
+        <td>cpf</td>
+        <td>nascimento</td>
+        <td>sexo</td>
+        <td>endereco</td>
+        <td>cep</td>
+        <td>telefone</td>
+        <td>celular</td>
+        <td>email</td>
+        <td>senha</td>
+        <td>comentarios</td>
+    </tr>    
+
+
+{{#data}}
+
+    <tr>
+       
+        <td>{{id}}</td>
+        <td>{{nome}}</td>
+        <td>{{cpf}}</td>
+        <td>{{nascimento}}</td>
+        <td>{{sexo}}</td>
+        <td>{{endereco}}</td>
+        <td>{{cep}}</td>
+        <td>{{telefone}}</td>
+        <td>{{celular}}</td>
+        <td>{{email}}</td>
+        <td>{{senha}}</td>
+        <td>{{comentarios}}</td>
+    </tr>    
+{{/data}}
+</table>
         </section>
         <br>
         <br>
@@ -83,7 +121,7 @@
 
 
 
-<>
+
     
 
 
