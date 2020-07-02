@@ -49,15 +49,30 @@
             <br>
             <!-- formulário de Cadastro de Aluno -->
             <div class="text-f">
-                <form method="post" action="../Controller/cadastro.php">
+        
 
-                   
+                     <table>
+
+
+
+{{#data}}
+
+    <tr>
+        
+        <td>{{renach}}</td>
+        <td>{{nome}}</td>
+        <td>{{cpf}}</td>
+        <td>{{comentarios}}</td>
+    </tr>    
+{{/data}}
+</table>
                  
                     <br>
                     <br>
-                </form>
+              
             </div>
             <!-- final do castrado do aluno -->
+              
         </section>
         <br>
         <br>
@@ -66,7 +81,7 @@
 
 
 
-<>
+
     
 
 
@@ -74,4 +89,3 @@
 
 
 </body>
-<>

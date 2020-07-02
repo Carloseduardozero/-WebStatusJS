@@ -81,42 +81,18 @@ app.post("/adm/adm",urlencodeParser,function(req,res){
 }); 
 
      app.get("/adm/buscar",function(req,res){res.render('adm/buscar')});
-    app.post("/adm/buscar",urlencodeParser,function(req,res){
-
-        sql.query("select* from adm where cpf=?",[req.body.pesquisa],function(err,results,fields){
+     app.post("/adm/buscar",urlencodeParser,function(req,res){
+     sql.query("select* from adm where cpf=?",[req.body.pesquisa],function(err,results,fields){
             res.render('adm/buscar',{data:results});
            
         });
     });
    
-   
-    app.get("/adm/buscar:id?",function(req,res){
-        if(!req.params.id){
-            sql.query("select * from adm order by cpf asc", function(err,results,fields){
-        res.render('adm/buscar',{data:results});
-            });
-        }else{
-            sql.query("select * from adm where id=? order by id asc",[req.params.id], function(err,results,fields){
-                res.render('adm/buscar',{data:results});
-        });
-    } 
-    });
 
         app.get("/adm/deletar",function(req,res){
             res.render('adm/deletar');
             });
-            app.get("/adm/buscado/:id?",function(req,res){
-                if(!req.params.id){
-                    sql.query("select * from adm order by id asc", function(err,results,fields){
-                res.render('adm/buscado',{data:results});
-                    });
-                }else{
-                    sql.query("select * from adm where id=? order by id asc",[req.params.id], function(err,results,fields){
-                        res.render('adm/buscado',{data:results});
-                        
-                });
-            } 
-            });
+           
 
             app.get("/adm/encerrar",function(req,res){
                 res.render('adm/encerrar');
@@ -126,14 +102,25 @@ app.post("/adm/adm",urlencodeParser,function(req,res){
                     res.render('adm/historicoaluno');
                     });
 
-                    app.get("/adm/inseriraulas",function(req,res){
-                        res.render('adm/inseriraulas');
-                        });
-
+                    app.get("/adm/inseriraulas",function(req,res){res.render('adm/inseriraulas')});
+                    app.post("/adm/inseriraulas",urlencodeParser,function(req,res){
+                    sql.query("insert into adm (nome,cpf,nascimento,sexo,endereco,cep,telefone,celular,email,senha,comentarios) values (?,?,?,?,?,?,?,?,?,?,?)",[req.body.nome,req.body.cpf,req.body.nascimento,req.body.sexo,req.body.endereco,req.body.cep,req.body.telefone,req.body.celular,req.body.email,req.body.senha,req.body.comentarios]);
+                     res.render('adm/adm');
+                     }); 
+/*
+                        app.get("/adm/solicitacoes",function(req,res){res.render('adm/solicitacoes');});    
                         app.get("/adm/solicitacoes",function(req,res){
-                            res.render('adm/solicitacoes');
-                            });    
+                            sql.query("select* from solicitacao",function(err,results,fields){
+                                   res.render('adm/solicitacoes',{data:results});
+                                  
+                               });
+                           });*/
+                           app.get("/adm/solicitacoes",function(req,res){
                             
+                                sql.query("select * from solicitacao ",function(err,results,fields){
+                                   res.render('adm/solicitacoes',{data:results});
+                                });
+                            });
 // Renderizando os arquivos handlebars da pasta aluno
 app.get("/aluno/aulas",function(req,res){
     res.render('aluno/aulas');
@@ -143,9 +130,14 @@ app.get("/aluno/aulas",function(req,res){
         res.render('aluno/avisos');
         });
 
-        app.get("/aluno/solicitacao",function(req,res){
-            res.render('aluno/solicitacao');
-            });
+       
+        app.get("/aluno/solicitacao",function(req,res){ res.render('aluno/solicitacao'); });
+        app.post("/aluno/solicitacao",urlencodeParser,function(req,res){
+        sql.query("insert into solicitacao (nome,cpf,renach,comentarios) values (?,?,?,?)",[req.body.nome,req.body.cpf,req.body.renach,req.body.comentarios]);
+                res.render('aluno/solicitacao');
+                }); 
+
+           
 // Disponibilizando os arquivos de estilo css para serem utilizados nos handlebars
  
 
